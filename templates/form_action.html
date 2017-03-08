@@ -1,0 +1,17 @@
+ <html>
+    <head>
+        <title>Handle POST requests with Flask</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <div class="title">
+                <h1>POST request with Flask</h1>
+            </div>
+            <div id="content">
+                Pump 1 will run for <strong>{{pump1time}}</strong> seconds <br>
+                Pump 2 will run for <strong>{{pump2time}}<strong> seconds <br>
+            </div>
+        </div>
+    </body>
+</html>
