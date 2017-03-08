@@ -11,7 +11,7 @@ def get_ph_now():
     except Exception as exc:
         print 'Unable to get ph'
 
-def get_ph_average(duration,pause=.5):
+def get_ph_average(duration,pause=1):
      ph_list = []
      for i in range(0,duration):
          ph_list.append(get_ph_now())
