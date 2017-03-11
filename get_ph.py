@@ -6,10 +6,11 @@ import json
 def get_ph_now(attempt=0):  
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600)
-        ph=float(ser.readline().split(':')[-1].strip())
+        rawser = ser.readline()
+        ph=float(rawser.split(':')[-1].strip())
         return ph
     except Exception as exc:
-        print 'Attempt {}: Unable to get ph -- {}'.format(attempt+1, exc)
+        print 'Attempt {}: Unable to get ph -- {}\n{}'.format(attempt+1, exc,rawser)
         attempt+=1
         get_ph_now(attempt)
 
