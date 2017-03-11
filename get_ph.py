@@ -5,9 +5,9 @@ import json
 
 def get_ph_now():  
     try:
+        ser = serial.Serial('/dev/ttyUSB0', 9600) #Trash Reading because first one normally garbage
         ser = serial.Serial('/dev/ttyUSB0', 9600)
-        ph=ser.readline().strip()
-        ph=json.dumps(ph)
+        ph=ser.readline().strip()        
         print ph
     except Exception as exc:
         print 'Unable to get ph -- {}'.format(exc)
