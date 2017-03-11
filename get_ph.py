@@ -6,7 +6,7 @@ import json
 def get_ph_now():  
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600)
-        ph=ser.readline()
+        ph=ser.readline().strip()
         ph=json.dumps(ph)
         print ph
     except Exception as exc:
