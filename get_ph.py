@@ -7,10 +7,10 @@ def get_ph_now():
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600)
         ph=ser.readline()
+        ph=json.dumps(ph)
         print ph
-        return float(ph)
     except Exception as exc:
-        print 'Unable to get ph'
+        print 'Unable to get ph -- {}'.format(exc)
 
 def get_ph_average(duration,pause=1):
      ph_list = []
