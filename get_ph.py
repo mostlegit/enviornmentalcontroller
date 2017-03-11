@@ -6,7 +6,7 @@ import json
 def get_ph_now(attempt=0):  
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600)
-        print ser
+        print ser()
         ph=float(ser.readline().split(':')[-1].strip())
         return ph
     except Exception as exc:
