@@ -7,6 +7,9 @@ def get_ph_now(attempt=0):
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600)
         rawser = ser.readline()
+        if rawser == None:
+            print 'No Reading. Trying again'
+            rawser = ser.readline()
         ph=float(rawser.split(':')[-1].strip())
         return ph
     except Exception as exc:
