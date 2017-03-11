@@ -3,6 +3,8 @@ import serial
 import time
 import json
 
+cycleduration=8
+
 def get_ph_now(attempt=0):  
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600)
@@ -29,8 +31,8 @@ def get_ph_average(duration,pause=1):
 def main():
     print 'PH now'
     print get_ph_now()
-    print 'PH over 30 seconds'
-    get_ph_average(8,pause=1)
+    print 'PH over {} cycles'.format(cycleduration)
+    get_ph_average(cycleduration,pause=1)
     quit()
    
 main()
