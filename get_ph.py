@@ -11,7 +11,6 @@ def get_ph_now(attempt=0):
             print 'No Reading. Trying again'
             time.sleep(.5)
             rawser = ser.readline()
-        else:
         ph=float(rawser.split(':')[-1].strip())
         return ph
     except Exception as exc:
