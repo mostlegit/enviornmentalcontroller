@@ -1,11 +1,12 @@
 #!/usr/bin/python
 import serial
 import time
+import json
 
 def get_ph_now():  
     try:
-        ser = serial.Serial('/dev/ttyACM0', 9600)
-        ph=ser.readline().split('=')[-1].strip()
+        ser = serial.Serial('/dev/ttyUSB0', 9600)
+        ph=ser.readline()
         print ph
         return float(ph)
     except Exception as exc:
