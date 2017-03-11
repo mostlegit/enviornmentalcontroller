@@ -6,7 +6,7 @@ import json
 def get_ph_now(attempt=0):  
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600) #Trash Reading because first one normally garbage
-        while not 'PH' in ser:
+        if not 'PH' in ser:
             print 'PH not detected in serial output: {}'.format(ser)
             time.sleep(1)
             ser = serial.Serial('/dev/ttyUSB0', 9600)
