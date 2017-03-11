@@ -11,7 +11,8 @@ def get_ph_now(attempt=0):
         print ph
     except Exception as exc:
         print 'Attempt {}: Unable to get ph -- {}'.format(attempt+1, exc)
-        get_ph_now(attempt+=1)
+        attempt+=1
+        get_ph_now(attempt)
 
 def get_ph_average(duration,pause=1):
      ph_list = []
