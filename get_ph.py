@@ -19,4 +19,9 @@ def get_ph_average(duration,pause=1):
          time.sleep(pause)
      print sum(ph_list) / len(ph_list)
          
-
+def main():
+    get_ph_now()
+    get_ph_now()
+    quit()
+   
+main()
