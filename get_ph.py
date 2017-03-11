@@ -7,12 +7,11 @@ def get_ph_now(attempt=0):
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600)
         rawser = ser.readline().strip()
-        if not 'PH' in rawser:
+        while not 'PH' in rawser:
             print 'No Reading. Trying again'
+            time.sleep(.5)
             rawser = ser.readline()
         else:
-            print rawser
-            print rawser.split(':')[-1].strip()
         ph=float(rawser.split(':')[-1].strip())
         return ph
     except Exception as exc:
@@ -32,7 +31,7 @@ def main():
     print 'PH now'
     print get_ph_now()
     print 'PH over 30 seconds'
-    get_ph_average(30,pause=1)
+    get_ph_average(8,pause=1)
     quit()
    
 main()
