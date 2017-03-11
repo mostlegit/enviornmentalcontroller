@@ -10,6 +10,8 @@ def get_ph_now(attempt=0):
         if rawser == None:
             print 'No Reading. Trying again'
             rawser = ser.readline()
+        else:
+            print raswer
         ph=float(rawser.split(':')[-1].strip())
         return ph
     except Exception as exc:
