@@ -6,7 +6,7 @@ import json
 def get_ph_now(attempt=0):  
     try:
         ser = serial.Serial('/dev/ttyUSB0', 9600)
-        rawser = ser.readline()
+        rawser = ser.readline().strip()
         if rawser == None:
             print 'No Reading. Trying again'
             rawser = ser.readline()
