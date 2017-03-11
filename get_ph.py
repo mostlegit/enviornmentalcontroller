@@ -10,7 +10,7 @@ def get_ph_now(attempt=0):
         ph=float(rawser.split(':')[-1].strip())
         return ph
     except Exception as exc:
-        print 'Attempt {}: Unable to get ph -- {}\n{}'.format(attempt+1, exc,rawser)
+        print 'Attempt {}: Unable to get ph -- {}\nSerial Info:{}'.format(attempt+1, exc,rawser)
         attempt+=1
         get_ph_now(attempt)
 
