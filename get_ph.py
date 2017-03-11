@@ -22,8 +22,10 @@ def get_ph_average(duration,pause=1):
      print sum(ph_list) / len(ph_list)
          
 def main():
+    print 'PH now'
     get_ph_now()
-    get_ph_now()
+    print 'PH over 30 seconds'
+    get_ph_average(30,pause=1)
     quit()
    
 main()
