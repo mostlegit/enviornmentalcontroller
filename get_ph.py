@@ -21,6 +21,7 @@ def get_ph_now(attempt=0):
         get_ph_now(attempt)
 
 def get_ph_average(duration,pause=1):
+     print 'PH over {} cycles'.format(duration)
      ph_list = []
      for i in range(0,duration):
          ph_list.append(get_ph_now())
@@ -31,8 +32,7 @@ def get_ph_average(duration,pause=1):
 def main():
     print 'PH now'
     print get_ph_now()
-    print 'PH over {} cycles'.format(cycleduration)
     get_ph_average(cycleduration,pause=1)
     quit()
    
-main()
+#main()
