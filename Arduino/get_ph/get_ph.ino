@@ -14,11 +14,10 @@ outputValue = map(sensorValue, 0, 1023, 0, 14);
 // change the analog out value:
 analogWrite(analogOutPin, outputValue);
 // print the results to the serial monitor:
-Serial.print("{\"sensor\" : ");
+Serial.print("sensor : ");
 Serial.print(sensorValue);
-Serial.print(" \t \"PH\" : ");
-Serial.print(analogRead(2)* 14.0 / 1024, 1);
-Serial.println("}");
+Serial.print(", \t PH : ");
+Serial.println(analogRead(2)* 14.0 / 1024, 1);
 // wait 10 milliseconds before the next loop
 // for the analog-to-digital converter to settle
 // after the last reading:
