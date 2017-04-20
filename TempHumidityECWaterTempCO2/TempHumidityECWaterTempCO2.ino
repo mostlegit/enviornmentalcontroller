@@ -120,7 +120,7 @@ void loop() {
         Serial.print(mySensor.ppm);
         Serial.print(" ");
     } else {
-        Serial.println("Sensor communication error.");
+        Serial.print("CO2 : Sensor communication error ");
     }
 
     delay(1000);
@@ -156,9 +156,12 @@ void loop() {
 
   // print the results to the serial monitor:
        
-  Serial.print("EC : ");      
-  Serial.print(analogRead(1)* 5.00 / 1024, 2);   
-  Serial.print(" ");
+  Serial.print("EC : ");
+  float EC_info = ( analogRead(1)* 5.00 / 1024 );
+  Serial.print(EC_info);   
+  Serial.print(" JCU : ");
+  Serial.print(EC_info * 420);
+  Serial.print(" ");   
   // wait 10 milliseconds before the next loop
   // for the analog-to-digital converter to settle
   // after the last reading:
@@ -236,4 +239,3 @@ void printAddress(DeviceAddress deviceAddress)
     Serial.print(deviceAddress[i], HEX);
   }
 }
-
